@@ -67,10 +67,11 @@ table.data tbody tr:hover{background:#f7f9fb}
 <div class="container is-max-desktop"><div class="columns is-centered">
 <div class="column has-text-centered">
 <h1 class="title is-1 publication-title">Where Does a Physical Constraint Belong in a Generative Model?</h1>
-<p class="is-size-4" style="color:#4a4a4a;margin-top:.7rem">Constraint-exact scenario generation for power grids</p>
+<p class="is-size-4" style="color:#4a4a4a;margin-top:.7rem">A codimension-controlled benchmark for constraint-exact<br>power-grid scenario generation</p>
 <div class="is-size-5 publication-authors"><span class="author-block">Anonymous Authors</span></div>
 <div class="venue-tag">Under review at ICLR</div>
 <div class="column has-text-centered"><div class="publication-links">
+<span class="link-block"><a href="paper.pdf" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a></span>
 <span class="link-block"><a href="https://github.com/Nishant27-2006/constraint-placement" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
 <span class="link-block"><a href="https://github.com/Nishant27-2006/constraint-placement/blob/main/docs/RESULTS.md" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-table"></i></span><span>Results</span></a></span>
 <span class="link-block"><a href="https://github.com/Nishant27-2006/constraint-placement/blob/main/docs/CLAIMS_AND_EVIDENCE.md" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-clipboard-check"></i></span><span>Pre-registration</span></a></span>
@@ -80,8 +81,8 @@ table.data tbody tr:hover{background:#f7f9fb}
 <div class="columns is-centered"><div class="column is-full-width">
 <h2 class="title is-3 has-text-centered">Abstract</h2>
 <div class="content has-text-justified">
-<p>Generative scenario models for power grids must obey the physics they describe &mdash; a set of injections that breaks Kirchhoff's laws is not a pessimistic forecast, it is an impossible one. Several methods achieve <b>exact</b> constraint satisfaction. The open question is <b>where the constraint belongs</b>: in the hypothesis class, at inference, in the loss, or in the coordinates.</p>
-<p>We benchmark all four routes under identical backbones, budgets and data &mdash; <b>16 methods, 10 seeds, three suites</b> built from real grid measurements &mdash; varying one thing: the <b>codimension</b> of the constraint set, the fraction of the state the physics already determines. <b>The answer is not universal.</b> On a controlled contrast, train-time projection moves from indistinguishable from doing nothing to a significant win; on a third real dataset the same code is significantly worse.</p>
+<p>Generative models are increasingly used to produce operational scenarios for power systems, and such scenarios must satisfy the physical laws they describe: a set of injections that violates Kirchhoff's laws is not a conservative forecast but an impossible one. Several methods achieve <b>exact</b> satisfaction of affine physical invariants, and the literature disagrees about which to prefer. We argue the open question is not whether to enforce a constraint but <b>where it belongs</b>: in the hypothesis class (train-time projection), at inference (zero-shot correction), in the loss (penalty), or in the coordinates (nullspace or completion).</p>
+<p>We give the affine theory &mdash; train-time projection is exact under any Runge&ndash;Kutta scheme, excludes no minimiser, and never increases the flow-matching loss &mdash; then build a benchmark that varies one quantity, the <b>codimension</b> of the constraint set, across <b>16 methods, 10 seeds and three suites</b> derived from real grid measurements. <b>The answer is not universal.</b> On a controlled contrast in which the only change is how much of the state the physics determines, train-time projection moves from statistically indistinguishable from unconstrained flow matching to a significant improvement; on a third real dataset the identical code is significantly worse.</p>
 </div>
 </div></div></div></section>
 <section class="section hero is-small is-light">
